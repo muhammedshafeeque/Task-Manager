@@ -1,0 +1,18 @@
+@import "../../Color.scss";
+.login_header{
+    width: 100%;
+    background-color: $white;
+    padding: 10px;
+    border-radius: 10px;
+    .text{
+        text-align: center;
+        font-size: 20px;
+    }
+}
+.login_area{
+    width: 100%;
+    background-color: $white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}

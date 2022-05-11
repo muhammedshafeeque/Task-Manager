@@ -37,11 +37,11 @@ module.exports={
 
                 let Exist=await db.get().collection(Collection.USER_COLLECTION).findOne({email:email})
                 if(Exist){
-                    res.send({error:"Email Already Exist "})
+                    res.send({error:"Email already Exist "})
                 }else{
                     Exist=await db.get().collection(Collection.USER_COLLECTION).findOne({mobile:mobile})
                     if(Exist){
-                        res.send({error:"mobile Alredy Exist"})
+                        res.send({error:"mobile alredy Exist"})
                     }else{
                         try {
                             let encrypted_password=await bcrypt.hash(password, 10)
@@ -87,6 +87,6 @@ module.exports={
         }
     },
     doLogOut:(req,res)=>{
-        
+
     }
 }
