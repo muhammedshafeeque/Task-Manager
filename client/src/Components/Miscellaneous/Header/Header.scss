@@ -1,0 +1,19 @@
+@import '../../../Color.scss';
+
+.header{
+    width: 100%;
+    background-color:white ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    border-width: 5px;
+    .header_text{
+        font-size: 25px;
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
