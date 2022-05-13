@@ -17,16 +17,18 @@ import { Store } from "../../Context/Store";
 import { useNavigate } from "react-router-dom";
 function LogoutPopup() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {config}=Store()
+  const {config,setUser}=Store()
   const navigate=useNavigate()
   const handleLoguot=async()=>{
     axios.get('/api/user/logout',config).then((res)=>{
       localStorage.removeItem('user')
+      setUser(null)
       navigate('/login')
     })
   }
   const handleAllLogout=async()=>{
     axios.get('/api/user/logout-all',config).then((res)=>{
+      setUser(null)
       localStorage.removeItem('user')
       navigate('/login')
     })

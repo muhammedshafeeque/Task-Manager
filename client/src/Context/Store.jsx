@@ -5,6 +5,7 @@ const TaskContext=createContext()
 const TaskProvider=({children})=>{
     const [user,setUser]=useState()
     const [config,setConfig]=useState()
+    const [tasks,setTasks]=useState([])
     const navigate=useNavigate()
     useEffect(()=>{
         let userData=JSON.parse(localStorage.getItem('user'))
@@ -18,6 +19,9 @@ const TaskProvider=({children})=>{
                     localStorage.removeItem('user')
                     navigate('/login')
                 }else{
+                    axios.get('/api/task/fetch-tasks',configs).then((res)=>{
+                        setTasks(res.data)
+                      })
                     setUser(res.data)
                     navigate('/')
                 }
@@ -33,7 +37,7 @@ const TaskProvider=({children})=>{
         }
     },[user])
     return (
-        <TaskContext.Provider value={{user,setUser,config,setConfig}} >
+        <TaskContext.Provider value={{user,setUser,config,setConfig,tasks,setTasks}} >
             {children}
         </TaskContext.Provider>
     )
