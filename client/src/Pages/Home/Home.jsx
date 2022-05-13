@@ -15,7 +15,7 @@ function Home() {
     if(!user){
       navigate('/login')
     }
-  },[])
+  },[navigate,user])
   return (
     <div>
       <Header />

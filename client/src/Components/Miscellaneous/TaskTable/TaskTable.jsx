@@ -1,4 +1,4 @@
-import { Box, Checkbox, Text, VStack } from "@chakra-ui/react";
+import { Box, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { Store } from "../../../Context/Store";
 import VewTask from "../../VewTask/VewTask";
