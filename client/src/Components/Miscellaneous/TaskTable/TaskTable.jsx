@@ -8,7 +8,7 @@ function TaskTable() {
   return (
     <div>
       <VStack spacing={4} align="stretch">
-        {tasks.map((task) => {
+        {tasks.length>0 && tasks.map((task) => {
           return (
             <div key={task._id}>
               <VewTask task={task}>
